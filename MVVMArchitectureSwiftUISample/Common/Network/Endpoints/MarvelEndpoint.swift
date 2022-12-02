@@ -9,7 +9,7 @@
 import Foundation
 
 enum MarvelEndpoint {
-    case getCharactersListMarvel(page: Int)
+    case getCharactersListMarvel(page: Int, sortType: SortType, search: String?)
     case getCharacterDetailMarvel(id: Int)
 }
 
@@ -20,18 +20,33 @@ extension MarvelEndpoint: APIEndpoint {
 
     var path: String {
         switch self {
-        case .getCharactersListMarvel (let page):
+        case .getCharactersListMarvel (let page, let sorType, let search):
             let timestamp = Int(Date().timeIntervalSince1970)
             let publicKey = APIMarvelKeys.publicKey
             let privateKey = APIMarvelKeys.privateKey
             let hash = "\(timestamp)\(privateKey)\(publicKey)"
             let limit = 20
             let offset = limit * page
+            let aPIParameterSearchName = search != nil && search != "" ? "&\(APIParameterKey.nameStartsWith.rawValue)=\(search!)" : ""
+            var sortValue = ""
+            switch sorType {
+                case .ascendent:
+                sortValue = "name"
+
+                case.descendent:
+                sortValue = "-name"
+
+                case .none:
+                sortValue = ""
+            }
+            let aPIParameterSort =  sortValue != "" ? "&\(APIParameterKey.orderBy.rawValue)=\(sortValue)" : ""
             return "/v1/public/characters" + "?\(APIParameterKey.timestamp.rawValue)=\(timestamp)"
               + "&\(APIParameterKey.hash.rawValue)=\(hash.md5())"
               + "&\(APIParameterKey.apiKey.rawValue)=\(publicKey)"
               + "&\(APIParameterKey.limit.rawValue)=\(limit)"
               + "&\(APIParameterKey.offset.rawValue)=\(offset)"
+              + aPIParameterSort
+              + aPIParameterSearchName
         case .getCharacterDetailMarvel(let id):
             let timestamp = Int(Date().timeIntervalSince1970)
             let publicKey = APIMarvelKeys.publicKey

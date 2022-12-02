@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB35DAF029390FF60047FFF2 /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35DAEF29390FF60047FFF2 /* SortType.swift */; };
+		DB35DAF2293910250047FFF2 /* HelperComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35DAF1293910250047FFF2 /* HelperComponents.swift */; };
+		DB35DAF7293911710047FFF2 /* MarvelListModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35DAF6293911710047FFF2 /* MarvelListModelLogic.swift */; };
 		DB40BC342937B0F200DF8B2F /* MVVMArchitectureSwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40BC332937B0F200DF8B2F /* MVVMArchitectureSwiftUISampleApp.swift */; };
 		DB40BC362937B0F200DF8B2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40BC352937B0F200DF8B2F /* ContentView.swift */; };
 		DB40BC382937B0F400DF8B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB40BC372937B0F400DF8B2F /* Assets.xcassets */; };
@@ -60,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB35DAEF29390FF60047FFF2 /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
+		DB35DAF1293910250047FFF2 /* HelperComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperComponents.swift; sourceTree = "<group>"; };
+		DB35DAF6293911710047FFF2 /* MarvelListModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListModelLogic.swift; sourceTree = "<group>"; };
 		DB40BC302937B0F200DF8B2F /* MVVMArchitectureSwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMArchitectureSwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB40BC332937B0F200DF8B2F /* MVVMArchitectureSwiftUISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMArchitectureSwiftUISampleApp.swift; sourceTree = "<group>"; };
 		DB40BC352937B0F200DF8B2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +130,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB35DAEE29390FE60047FFF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB35DAEF29390FF60047FFF2 /* SortType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB35DAF52939115A0047FFF2 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				DB35DAF6293911710047FFF2 /* MarvelListModelLogic.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 		DB40BC272937B0F100DF8B2F = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +253,7 @@
 		DB40BC712937B8CF00DF8B2F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DB35DAEE29390FE60047FFF2 /* Models */,
 				DBD28E3E2938B96700B52885 /* Components */,
 				DB40BC5D2937B11100DF8B2F /* Network */,
 				DB40BC722937B8D700DF8B2F /* Extensions */,
@@ -289,6 +312,7 @@
 		DB40BC982937BF2C00DF8B2F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DB35DAF52939115A0047FFF2 /* Logic */,
 				DB40BC9B2937BF5B00DF8B2F /* MarvelListViewModel.swift */,
 			);
 			path = ViewModels;
@@ -314,6 +338,7 @@
 		DBD28E3E2938B96700B52885 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DB35DAF1293910250047FFF2 /* HelperComponents.swift */,
 				DBD28E3F2938B98400B52885 /* ButtonHelper.swift */,
 			);
 			path = Components;
@@ -462,6 +487,8 @@
 				DB40BC952937BD9300DF8B2F /* ItemEvent.swift in Sources */,
 				DB40BC742937B8E900DF8B2F /* String+Additions.swift in Sources */,
 				DB40BC912937BD9300DF8B2F /* Comic.swift in Sources */,
+				DB35DAF2293910250047FFF2 /* HelperComponents.swift in Sources */,
+				DB35DAF029390FF60047FFF2 /* SortType.swift in Sources */,
 				DB40BC962937BD9300DF8B2F /* Story.swift in Sources */,
 				DB40BC922937BD9300DF8B2F /* Url.swift in Sources */,
 				DB40BC932937BD9300DF8B2F /* ItemSeries.swift in Sources */,
@@ -470,6 +497,7 @@
 				DB40BC8C2937BD9300DF8B2F /* Thumbnail.swift in Sources */,
 				DB40BC8B2937BD9300DF8B2F /* Series.swift in Sources */,
 				DB40BC342937B0F200DF8B2F /* MVVMArchitectureSwiftUISampleApp.swift in Sources */,
+				DB35DAF7293911710047FFF2 /* MarvelListModelLogic.swift in Sources */,
 				DBD28E402938B98400B52885 /* ButtonHelper.swift in Sources */,
 				DBD28E382938AC1C00B52885 /* RandomAccessCollection+Additions.swift in Sources */,
 				DB40BC902937BD9300DF8B2F /* CharactersListMarvel.swift in Sources */,
@@ -644,6 +672,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,6 +703,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

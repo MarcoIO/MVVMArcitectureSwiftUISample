@@ -23,7 +23,8 @@ enum APIParameterKey: String {
   case limit = "limit"
   case page = "page"
   case offset = "offset"
-
+  case orderBy = "orderBy"
+  case nameStartsWith = "nameStartsWith"
 }
 enum HTTPHeaderField: String {
     case authentication = "Authorization"

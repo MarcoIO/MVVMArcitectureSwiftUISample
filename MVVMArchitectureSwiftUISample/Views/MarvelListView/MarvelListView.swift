@@ -74,6 +74,22 @@ struct MarvelListView: View {
             }
             .navigationTitle("Characters")
             .navigationBarItems(trailing: Text("Page index: \(vm.pageList)"))
+            .searchable(text: $vm.search, prompt: Text("Search a character"))
+            .onChange(of: vm.search) { newValue in
+                Task {
+                    try await vm.sortFilterCharacters()
+                }
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    sortTypeButton(sortType: $vm.sortType) {
+                        try await vm.sortFilterCharacters()
+                    }
+                }
+            }
+//            .navigationDestination(isPresented: $vm.requestSuccess) {
+//                Text(vm.requestSuccessString)
+//            }
         }
 
     }

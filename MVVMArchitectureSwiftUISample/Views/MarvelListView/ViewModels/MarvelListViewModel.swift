@@ -15,9 +15,17 @@ final class MarvelListViewModel:ObservableObject {
     @Published var showAlert = false
     @Published var errorMsg = ""
 
+    @Published var requestSuccess = false
+    @Published var requestSuccessString = ""
+
+
     let marvelService = MarvelService()
 
     @Published var pageList = 0
+    @Published var sortType:SortType = .none
+    @Published var search: String = ""
+
+
     var pageOffset = 3
 
     public init() {
@@ -31,9 +39,11 @@ final class MarvelListViewModel:ObservableObject {
             if !characters.isEmpty {
                 pageList += 1
             }
-            let response = try await marvelService.getCharactersListMarvel(page: pageList)
+            let response = try await marvelService.getCharactersListMarvel(page: pageList, sortType: sortType, search: search)
             if let data = response.data {
                 characters += data.results ?? []
+                requestSuccess.toggle()
+                requestSuccessString = "Exito en la llamada"
             }
         } catch let error as CustomNetworkError {
             errorMsg = error.customMessage
@@ -43,5 +53,11 @@ final class MarvelListViewModel:ObservableObject {
             showAlert.toggle()
         }
     }
-
+    
+    @MainActor
+    func sortFilterCharacters() async throws {
+        characters.removeAll()
+        pageList = 0
+        try await getCharactersListMarvel()
+    }
 }
