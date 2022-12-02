@@ -15,36 +15,7 @@ struct MarvelListView: View {
         NavigationStack {
             List {
                 ForEach(vm.characters) { character in
-                    VStack {
-                        Text(character.name ?? "")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                            .baselineOffset(-10)
-                            .shadow(color: .black, radius: 1, x: -1, y: 1)
-                            .frame(width: UIScreen.main.bounds.width, height: 200)
-
-                        if vm.isFetching && vm.characters.isLastItem(character) {
-                            Divider()
-                            Text("Loading ...")
-                                .padding(.vertical)
-                        }
-                    }
-                    .background(content: {
-                        if let thumbnail = character.thumbnail, let path = thumbnail.path, let exten = thumbnail.exten {
-                            let imageName = path + "." + exten
-                            AsyncImage(url: URL(string: imageName)) { image in
-                                image
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.width, height: 200)
-                                    .clipped()
-                            } placeholder: {
-                               ProgressView()
-                            }
-
-                        }
-
-                    })
+                    CharacterCell(vm: vm, character: character)
                     .onAppear {
                         Task {
                             await self.listItemAppears(character)

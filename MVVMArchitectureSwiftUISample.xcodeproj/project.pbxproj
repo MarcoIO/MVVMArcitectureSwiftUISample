@@ -40,6 +40,7 @@
 		DB40BC962937BD9300DF8B2F /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40BC892937BD9300DF8B2F /* Story.swift */; };
 		DB40BC9A2937BF4900DF8B2F /* MarvelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40BC992937BF4900DF8B2F /* MarvelListView.swift */; };
 		DB40BC9C2937BF5B00DF8B2F /* MarvelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40BC9B2937BF5B00DF8B2F /* MarvelListViewModel.swift */; };
+		DBB300032939EAB300C0EDBF /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB300022939EAB300C0EDBF /* CharacterCell.swift */; };
 		DBD28E382938AC1C00B52885 /* RandomAccessCollection+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD28E372938AC1C00B52885 /* RandomAccessCollection+Additions.swift */; };
 		DBD28E402938B98400B52885 /* ButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD28E3F2938B98400B52885 /* ButtonHelper.swift */; };
 		DBD28E422938B99500B52885 /* InitialSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD28E412938B99500B52885 /* InitialSelectionView.swift */; };
@@ -99,6 +100,7 @@
 		DB40BC892937BD9300DF8B2F /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		DB40BC992937BF4900DF8B2F /* MarvelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListView.swift; sourceTree = "<group>"; };
 		DB40BC9B2937BF5B00DF8B2F /* MarvelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListViewModel.swift; sourceTree = "<group>"; };
+		DBB300022939EAB300C0EDBF /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		DBD28E372938AC1C00B52885 /* RandomAccessCollection+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Additions.swift"; sourceTree = "<group>"; };
 		DBD28E392938B49600B52885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DBD28E3F2938B98400B52885 /* ButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHelper.swift; sourceTree = "<group>"; };
@@ -318,9 +320,18 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		DBB300012939EA9600C0EDBF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DBB300022939EAB300C0EDBF /* CharacterCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		DBD28E3C2938B8DB00B52885 /* MarvelListView */ = {
 			isa = PBXGroup;
 			children = (
+				DBB300012939EA9600C0EDBF /* Cell */,
 				DB40BC982937BF2C00DF8B2F /* ViewModels */,
 				DB40BC992937BF4900DF8B2F /* MarvelListView.swift */,
 			);
@@ -501,6 +512,7 @@
 				DBD28E402938B98400B52885 /* ButtonHelper.swift in Sources */,
 				DBD28E382938AC1C00B52885 /* RandomAccessCollection+Additions.swift in Sources */,
 				DB40BC902937BD9300DF8B2F /* CharactersListMarvel.swift in Sources */,
+				DBB300032939EAB300C0EDBF /* CharacterCell.swift in Sources */,
 				DB40BC662937B24F00DF8B2F /* CustomNetworkError.swift in Sources */,
 				DB40BC6B2937B36F00DF8B2F /* APIEndpoint.swift in Sources */,
 				DB40BC782937BD1600DF8B2F /* MarvelService.swift in Sources */,

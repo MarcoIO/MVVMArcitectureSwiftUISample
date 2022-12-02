@@ -32,7 +32,19 @@ struct CharactersList : Codable, Hashable, Identifiable {
     case thumbnail = "thumbnail"
     case urls = "urls"
   }
-  
+    init(name: String, thumbnail: Thumbnail?) {
+      self.name = name
+      self.comics = nil
+      self.descriptionField = nil
+      self.events = nil
+      self.id = 0
+      self.modified = nil
+      self.resourceURI = nil
+      self.series = nil
+      self.stories = nil
+      self.thumbnail = thumbnail
+      self.urls = nil
+  }
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
     comics = try values.decode(Comic.self, forKey: .comics)

@@ -19,5 +19,10 @@ struct Thumbnail : Codable, Hashable {
     exten = try values.decodeIfPresent(String.self, forKey: .exten)
     path = try values.decodeIfPresent(String.self, forKey: .path)
   }
+
+    init(exten: String, path: String) {
+        self.exten = exten
+        self.path = path
+    }
   
 }
