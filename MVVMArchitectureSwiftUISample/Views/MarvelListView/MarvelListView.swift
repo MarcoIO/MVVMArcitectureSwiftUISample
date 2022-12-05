@@ -36,7 +36,7 @@ struct MarvelListView: View {
                  await vm.getCharactersListMarvel()
             }.overlay {
                 if vm.isFetching {
-                    ProgressView()
+                    LoadingSpinner()
                 }
             }
             .alert("Network Error",

@@ -23,11 +23,12 @@ struct CharacterCell: View {
                         .frame(height: 250)
                         .clipped()
                 } placeholder: {
-                   Image(systemName: "photo")
+                   Image(systemName: "photo.fill")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: UIScreen.main.bounds.width, height: 250)
+                        .frame(width: 100, height: 100)
                         .clipped()
+                        .foregroundColor(.gray)
                 }
 
             }
