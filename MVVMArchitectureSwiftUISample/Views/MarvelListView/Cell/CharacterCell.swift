@@ -12,41 +12,44 @@ struct CharacterCell: View {
     @ObservedObject var vm: MarvelListViewModel
     let character: CharactersList
     var body: some View {
-        VStack {
-            Text(character.name ?? "")
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .baselineOffset(-10)
-                .shadow(color: .black, radius: 1, x: -1, y: 1)
-                .frame(width: UIScreen.main.bounds.width, height: 200)
-
-            if vm.isFetching && vm.characters.isLastItem(character) {
-                Divider()
-                Text("Loading ...")
-                    .padding(.vertical)
-            }
-        }
-        .background(content: {
+        ZStack(alignment: .top) {
             if let thumbnail = character.thumbnail, let path = thumbnail.path, let exten = thumbnail.exten {
                 let imageName = path + "." + exten
                 AsyncImage(url: URL(string: imageName)) { image in
                     image
                         .resizable()
                         .scaledToFill()
-                        .frame(width: UIScreen.main.bounds.width, height: 200)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 250)
                         .clipped()
                 } placeholder: {
-                   ProgressView()
+                   Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: UIScreen.main.bounds.width, height: 250)
+                        .clipped()
                 }
 
             }
+            Text(character.name ?? "")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .shadow(color: .black, radius: 1, x: -1, y: 1)
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+                .padding()
+        }
+
+        .background(content: {
+
 
         })
+        .listRowSeparator(.hidden)
+        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
 }
 
 struct CharacterCell_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterCell(vm: MarvelListViewModel(), character: CharactersList(name: "HULK", thumbnail: Thumbnail(exten: "jpeg", path: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hulk-avengers-age-of-ultron-1550250955")))
+        CharacterCell(vm: MarvelListViewModel(), character: CharactersList(name: "Hulk", thumbnail: Thumbnail(exten: "jpeg", path: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hulk-avengers-age-of-ultron-1550250955")))
     }
 }

@@ -28,19 +28,24 @@ final class MarvelListViewModel:ObservableObject {
 
     var pageOffset = 3
 
+
     public init() {
 
     }
     @MainActor
-    func getCharactersListMarvel() async throws {
+    func getCharactersListMarvel() async {
         isFetching = true
         defer { isFetching = false }
         do {
             if !characters.isEmpty {
                 pageList += 1
             }
+
             let response = try await marvelService.getCharactersListMarvel(page: pageList, sortType: sortType, search: search)
             if let data = response.data {
+                if pageList == 0 {
+                    characters.removeAll()
+                }
                 characters += data.results ?? []
                 requestSuccess.toggle()
                 requestSuccessString = "Exito en la llamada"
@@ -55,9 +60,9 @@ final class MarvelListViewModel:ObservableObject {
     }
     
     @MainActor
-    func sortFilterCharacters() async throws {
+    func sortFilterCharacters() async {
         characters.removeAll()
         pageList = 0
-        try await getCharactersListMarvel()
+        await getCharactersListMarvel()
     }
 }

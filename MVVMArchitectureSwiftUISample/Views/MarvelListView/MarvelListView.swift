@@ -24,12 +24,16 @@ struct MarvelListView: View {
                 }
 
             }
+            .emptyListPlaceholder(
+                vm.characters,
+                       AnyView(Text("No Characters").font(.title)) // Placeholder
+                   )
             .listStyle(.insetGrouped)
             .task {
-                try? await vm.getCharactersListMarvel()
+                 await vm.getCharactersListMarvel()
             }
             .refreshable {
-                try? await vm.getCharactersListMarvel()
+                 await vm.getCharactersListMarvel()
             }.overlay {
                 if vm.isFetching {
                     ProgressView()
@@ -48,13 +52,13 @@ struct MarvelListView: View {
             .searchable(text: $vm.search, prompt: Text("Search a character"))
             .onChange(of: vm.search) { newValue in
                 Task {
-                    try await vm.sortFilterCharacters()
+                     await vm.sortFilterCharacters()
                 }
             }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     sortTypeButton(sortType: $vm.sortType) {
-                        try await vm.sortFilterCharacters()
+                        await vm.sortFilterCharacters()
                     }
                 }
             }
@@ -78,7 +82,7 @@ extension MarvelListView {
         if vm.characters.isThresholdItem(offset: vm.pageOffset,
                                  item: item) {
             vm.isFetching = true
-            try? await vm.getCharactersListMarvel()
+            await vm.getCharactersListMarvel()
         }
     }
 }

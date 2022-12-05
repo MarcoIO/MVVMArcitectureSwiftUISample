@@ -44,6 +44,7 @@
 		DBD28E382938AC1C00B52885 /* RandomAccessCollection+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD28E372938AC1C00B52885 /* RandomAccessCollection+Additions.swift */; };
 		DBD28E402938B98400B52885 /* ButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD28E3F2938B98400B52885 /* ButtonHelper.swift */; };
 		DBD28E422938B99500B52885 /* InitialSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD28E412938B99500B52885 /* InitialSelectionView.swift */; };
+		DBD73C9F293DE47200C19FFB /* EmptyDataModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD73C9E293DE47200C19FFB /* EmptyDataModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		DBD28E392938B49600B52885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DBD28E3F2938B98400B52885 /* ButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHelper.swift; sourceTree = "<group>"; };
 		DBD28E412938B99500B52885 /* InitialSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSelectionView.swift; sourceTree = "<group>"; };
+		DBD73C9E293DE47200C19FFB /* EmptyDataModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +353,7 @@
 			children = (
 				DB35DAF1293910250047FFF2 /* HelperComponents.swift */,
 				DBD28E3F2938B98400B52885 /* ButtonHelper.swift */,
+				DBD73C9E293DE47200C19FFB /* EmptyDataModifier.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				DB40BC962937BD9300DF8B2F /* Story.swift in Sources */,
 				DB40BC922937BD9300DF8B2F /* Url.swift in Sources */,
 				DB40BC932937BD9300DF8B2F /* ItemSeries.swift in Sources */,
+				DBD73C9F293DE47200C19FFB /* EmptyDataModifier.swift in Sources */,
 				DB40BC8E2937BD9300DF8B2F /* CharactersList.swift in Sources */,
 				DB40BC362937B0F200DF8B2F /* ContentView.swift in Sources */,
 				DB40BC8C2937BD9300DF8B2F /* Thumbnail.swift in Sources */,
