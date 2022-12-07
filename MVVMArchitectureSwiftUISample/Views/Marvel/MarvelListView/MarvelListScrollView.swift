@@ -1,49 +1,44 @@
 //
-//  MarvelList.swift
+//  MarvelListScrollView.swift
 //  MVVMArchitectureSwiftUISample
 //
-//  Created by marco.iniguez.ollero on 30/11/22.
+//  Created by marco.iniguez.ollero on 7/12/22.
 //
 
 
 import SwiftUI
 
-struct MarvelListView: View {
+
+
+struct MarvelListScrollView: View {
     @ObservedObject var vm = MarvelListViewModel()
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(vm.characters) { character in
-                    NavigationLink {
-                        MarvelDetailView(vm: MarvelDetailViewModel(idCharacter: character.id ?? -1))
-                    } label: {
-                        VStack {
-                            CharacterCell(vm: MarvelListCellViewModel(character: character))
-                            if vm.isFetchingPagination && vm.characters.isLastItem(character) {
-                                Divider()
-                                Text("Loading ...")
-                                    .padding(.vertical)
-                            }
-                            
-                        }.onAppear {
-                            Task {
-                                await self.listItemAppears(character)
+            ScrollView {
+                LazyVStack(spacing: 0) {
+                    ForEach(vm.characters) { character in
+                        NavigationLink {
+                            MarvelDetailView(vm: MarvelDetailViewModel(idCharacter: character.id ?? -1))
+                        } label: {
+                            VStack {
+                                CharacterCell(vm: MarvelListCellViewModel(character: character))
+                                if vm.isFetchingPagination && vm.characters.isLastItem(character) {
+                                    Divider()
+                                    Text("Loading ...")
+                                        .padding(.vertical)
+                                }
+
+                            }.onAppear {
+                                Task {
+                                    await self.listItemAppears(character)
+                                }
                             }
                         }
                     }
-
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    
-
                 }
             }
-            .emptyListPlaceholder(
-                vm.characters,
-                       AnyView(Text("No Characters").font(.title)) // Placeholder
-                   )
-            .listStyle(.insetGrouped)
+            .scrollIndicators(.visible)
             .task {
                  await vm.getCharactersListMarvel()
             }
@@ -85,14 +80,14 @@ struct MarvelListView: View {
     }
 }
 
-struct MarvelList_Previews: PreviewProvider {
+struct MarvelListScroll_Previews: PreviewProvider {
     static var previews: some View {
-        MarvelListView()
+        MarvelListScrollView()
     }
 }
 
 
-extension MarvelListView {
+extension MarvelListScrollView {
     private func listItemAppears<Item: Identifiable>(_ item: Item) async {
         if vm.characters.isThresholdItem(offset: vm.pageOffset,
                                  item: item) {
@@ -101,5 +96,3 @@ extension MarvelListView {
         }
     }
 }
-
-// FIXME: There is a bug in SWIFT UI List, Event onAppear is not called always for each cell for this reason it's necessary to do the pagination with ScrollView and LazyVStack

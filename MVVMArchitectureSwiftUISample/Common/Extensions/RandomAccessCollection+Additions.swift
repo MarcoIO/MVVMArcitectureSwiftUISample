@@ -36,6 +36,7 @@ extension RandomAccessCollection where Self.Element: Identifiable {
 
         let distance = self.distance(from: itemIndex, to: endIndex)
         let offset = offset < count ? offset : count - 1
+        print(distance)
         return offset == (distance - 1)
     }
 }

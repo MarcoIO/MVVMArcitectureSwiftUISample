@@ -9,9 +9,6 @@ import UIKit
 
 final class MarvelListCellViewModel:ObservableObject {
     var character: CharactersList
-
-    @Published var showAlert = false
-    @Published var errorMsg = ""
     @Published var imageCharacter: UIImage?
 
 

@@ -19,7 +19,7 @@ struct InitialSelectionView: View {
                             .font(.title2)
                         Group {
                             NavigationLink {
-                                MarvelListView()
+                                MarvelListScrollView()
                             } label: {
                                 Text("Marvel List")
                                     .frame(maxWidth: .infinity)

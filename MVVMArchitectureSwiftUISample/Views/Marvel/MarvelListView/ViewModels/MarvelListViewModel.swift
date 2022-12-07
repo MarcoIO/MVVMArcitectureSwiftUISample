@@ -10,6 +10,8 @@ import Foundation
 
 final class MarvelListViewModel:ObservableObject {
     @Published var isFetching = false
+    @Published var isFetchingPagination = false
+
     @Published var characters: [CharactersList] = []
 
     @Published var showAlert = false
@@ -26,7 +28,7 @@ final class MarvelListViewModel:ObservableObject {
     @Published var search: String = ""
 
 
-    var pageOffset = 3
+    var pageOffset = 0
 
 
     public init() {
@@ -34,11 +36,18 @@ final class MarvelListViewModel:ObservableObject {
     }
     @MainActor
     func getCharactersListMarvel() async {
-        isFetching = true
-        defer { isFetching = false }
+        defer {
+            isFetching = false
+            isFetchingPagination = false
+        }
         do {
             if !characters.isEmpty {
                 pageList += 1
+            }
+            if pageList == 0 {
+                isFetching = true
+            } else  {
+                isFetchingPagination = true
             }
 
             let response = try await marvelService.getCharactersListMarvel(page: pageList, sortType: sortType, search: search)
