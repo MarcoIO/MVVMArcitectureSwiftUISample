@@ -65,4 +65,8 @@ final class MarvelListViewModel:ObservableObject {
         pageList = 0
         await getCharactersListMarvel()
     }
+    @MainActor
+    func getImageAsync() async {
+
+    }
 }

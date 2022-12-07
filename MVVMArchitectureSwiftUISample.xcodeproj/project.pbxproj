@@ -41,12 +41,17 @@
 		DB40BC9A2937BF4900DF8B2F /* MarvelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40BC992937BF4900DF8B2F /* MarvelListView.swift */; };
 		DB40BC9C2937BF5B00DF8B2F /* MarvelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40BC9B2937BF5B00DF8B2F /* MarvelListViewModel.swift */; };
 		DBB300032939EAB300C0EDBF /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB300022939EAB300C0EDBF /* CharacterCell.swift */; };
+		DBB9242D29409DCD00ED79D2 /* AsyncImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9242C29409DCD00ED79D2 /* AsyncImageLoader.swift */; };
+		DBB9242F29409F6E00ED79D2 /* MarvelListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9242E29409F6E00ED79D2 /* MarvelListCellViewModel.swift */; };
 		DBD28E382938AC1C00B52885 /* RandomAccessCollection+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD28E372938AC1C00B52885 /* RandomAccessCollection+Additions.swift */; };
 		DBD28E402938B98400B52885 /* ButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD28E3F2938B98400B52885 /* ButtonHelper.swift */; };
 		DBD28E422938B99500B52885 /* InitialSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD28E412938B99500B52885 /* InitialSelectionView.swift */; };
 		DBD73C9F293DE47200C19FFB /* EmptyDataModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD73C9E293DE47200C19FFB /* EmptyDataModifier.swift */; };
 		DBD73CA1293E29A000C19FFB /* LoadingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD73CA0293E29A000C19FFB /* LoadingSpinner.swift */; };
 		DBD73CA4293E2AE900C19FFB /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD73CA3293E2AE900C19FFB /* ColorHelper.swift */; };
+		DBD73CA8293E2F0C00C19FFB /* MarvelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD73CA7293E2F0C00C19FFB /* MarvelDetailView.swift */; };
+		DBD73CAD293E2F3C00C19FFB /* MarvelDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD73CAC293E2F3C00C19FFB /* MarvelDetailViewModel.swift */; };
+		DBD73CAF293E3D3200C19FFB /* MarvelDetailModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD73CAE293E3D3200C19FFB /* MarvelDetailModelLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +109,8 @@
 		DB40BC992937BF4900DF8B2F /* MarvelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListView.swift; sourceTree = "<group>"; };
 		DB40BC9B2937BF5B00DF8B2F /* MarvelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListViewModel.swift; sourceTree = "<group>"; };
 		DBB300022939EAB300C0EDBF /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		DBB9242C29409DCD00ED79D2 /* AsyncImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageLoader.swift; sourceTree = "<group>"; };
+		DBB9242E29409F6E00ED79D2 /* MarvelListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListCellViewModel.swift; sourceTree = "<group>"; };
 		DBD28E372938AC1C00B52885 /* RandomAccessCollection+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Additions.swift"; sourceTree = "<group>"; };
 		DBD28E392938B49600B52885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DBD28E3F2938B98400B52885 /* ButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHelper.swift; sourceTree = "<group>"; };
@@ -111,6 +118,9 @@
 		DBD73C9E293DE47200C19FFB /* EmptyDataModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataModifier.swift; sourceTree = "<group>"; };
 		DBD73CA0293E29A000C19FFB /* LoadingSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSpinner.swift; sourceTree = "<group>"; };
 		DBD73CA3293E2AE900C19FFB /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		DBD73CA7293E2F0C00C19FFB /* MarvelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDetailView.swift; sourceTree = "<group>"; };
+		DBD73CAC293E2F3C00C19FFB /* MarvelDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDetailViewModel.swift; sourceTree = "<group>"; };
+		DBD73CAE293E3D3200C19FFB /* MarvelDetailModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDetailModelLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,8 +321,8 @@
 		DB40BC972937BF2200DF8B2F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DBD73CA5293E2E2100C19FFB /* Marvel */,
 				DBD28E3D2938B8E800B52885 /* InitialSelectionView */,
-				DBD28E3C2938B8DB00B52885 /* MarvelListView */,
 				DB40BC352937B0F200DF8B2F /* ContentView.swift */,
 			);
 			path = Views;
@@ -323,6 +333,7 @@
 			children = (
 				DB35DAF52939115A0047FFF2 /* Logic */,
 				DB40BC9B2937BF5B00DF8B2F /* MarvelListViewModel.swift */,
+				DBB9242E29409F6E00ED79D2 /* MarvelListCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -360,6 +371,7 @@
 				DBD28E3F2938B98400B52885 /* ButtonHelper.swift */,
 				DBD73C9E293DE47200C19FFB /* EmptyDataModifier.swift */,
 				DBD73CA0293E29A000C19FFB /* LoadingSpinner.swift */,
+				DBB9242C29409DCD00ED79D2 /* AsyncImageLoader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -370,6 +382,49 @@
 				DBD73CA3293E2AE900C19FFB /* ColorHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		DBD73CA5293E2E2100C19FFB /* Marvel */ = {
+			isa = PBXGroup;
+			children = (
+				DBD73CA6293E2E3000C19FFB /* MarvelDetailView */,
+				DBD28E3C2938B8DB00B52885 /* MarvelListView */,
+			);
+			path = Marvel;
+			sourceTree = "<group>";
+		};
+		DBD73CA6293E2E3000C19FFB /* MarvelDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				DBD73CAA293E2F1D00C19FFB /* Cell */,
+				DBD73CA9293E2F1200C19FFB /* ViewModels */,
+				DBD73CA7293E2F0C00C19FFB /* MarvelDetailView.swift */,
+			);
+			path = MarvelDetailView;
+			sourceTree = "<group>";
+		};
+		DBD73CA9293E2F1200C19FFB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DBD73CAB293E2F2400C19FFB /* Logic */,
+				DBD73CAC293E2F3C00C19FFB /* MarvelDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DBD73CAA293E2F1D00C19FFB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DBD73CAB293E2F2400C19FFB /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				DBD73CAE293E3D3200C19FFB /* MarvelDetailModelLogic.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,9 +569,11 @@
 				DB40BC8D2937BD9300DF8B2F /* ItemStory.swift in Sources */,
 				DB40BC952937BD9300DF8B2F /* ItemEvent.swift in Sources */,
 				DB40BC742937B8E900DF8B2F /* String+Additions.swift in Sources */,
+				DBB9242D29409DCD00ED79D2 /* AsyncImageLoader.swift in Sources */,
 				DB40BC912937BD9300DF8B2F /* Comic.swift in Sources */,
 				DB35DAF2293910250047FFF2 /* HelperComponents.swift in Sources */,
 				DB35DAF029390FF60047FFF2 /* SortType.swift in Sources */,
+				DBD73CAD293E2F3C00C19FFB /* MarvelDetailViewModel.swift in Sources */,
 				DB40BC962937BD9300DF8B2F /* Story.swift in Sources */,
 				DB40BC922937BD9300DF8B2F /* Url.swift in Sources */,
 				DB40BC932937BD9300DF8B2F /* ItemSeries.swift in Sources */,
@@ -525,10 +582,13 @@
 				DBD73CA1293E29A000C19FFB /* LoadingSpinner.swift in Sources */,
 				DB40BC362937B0F200DF8B2F /* ContentView.swift in Sources */,
 				DB40BC8C2937BD9300DF8B2F /* Thumbnail.swift in Sources */,
+				DBD73CAF293E3D3200C19FFB /* MarvelDetailModelLogic.swift in Sources */,
 				DB40BC8B2937BD9300DF8B2F /* Series.swift in Sources */,
 				DB40BC342937B0F200DF8B2F /* MVVMArchitectureSwiftUISampleApp.swift in Sources */,
 				DB35DAF7293911710047FFF2 /* MarvelListModelLogic.swift in Sources */,
+				DBD73CA8293E2F0C00C19FFB /* MarvelDetailView.swift in Sources */,
 				DBD73CA4293E2AE900C19FFB /* ColorHelper.swift in Sources */,
+				DBB9242F29409F6E00ED79D2 /* MarvelListCellViewModel.swift in Sources */,
 				DBD28E402938B98400B52885 /* ButtonHelper.swift in Sources */,
 				DBD28E382938AC1C00B52885 /* RandomAccessCollection+Additions.swift in Sources */,
 				DB40BC902937BD9300DF8B2F /* CharactersListMarvel.swift in Sources */,

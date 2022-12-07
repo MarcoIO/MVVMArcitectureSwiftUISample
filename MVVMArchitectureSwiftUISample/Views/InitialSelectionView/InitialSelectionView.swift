@@ -15,6 +15,8 @@ struct InitialSelectionView: View {
             GeometryReader { geometry in
                 ScrollView {
                     VStack(spacing: 20) {
+                        Text("What do you want to see?")
+                            .font(.title2)
                         Group {
                             NavigationLink {
                                 MarvelListView()
@@ -22,24 +24,24 @@ struct InitialSelectionView: View {
                                 Text("Marvel List")
                                     .frame(maxWidth: .infinity)
                             }
-                            .padding(.horizontal)
+                            .padding(.horizontal, 30)
                             .buttonStyle(SelectionButtonStyle())
                             .frame(width: UIScreen.main.bounds.width)
                             NavigationLink {
-                                MarvelListView()
+
                             } label: {
                                 Text("Rick and Morty List")
                                     .frame(maxWidth: .infinity)
                             }
-                            .padding(.horizontal)
+                            .padding(.horizontal, 30)
                             .buttonStyle(SelectionButtonStyle())
                             NavigationLink {
-                                MarvelListView()
+
                             } label: {
                                 Text("LastFM List")
                                     .frame(maxWidth: .infinity)
                             }
-                            .padding(.horizontal)
+                            .padding(.horizontal, 30)
                             .buttonStyle(SelectionButtonStyle())
                         }
                         .navigationBarTitle("Initial Selection", displayMode: .inline)
@@ -47,7 +49,6 @@ struct InitialSelectionView: View {
                     }
                     .padding(.vertical)
                     .frame(width: geometry.size.width)
-                    // Make the scroll view full-width
                     .frame(minHeight: geometry.size.height)
                 }
             }

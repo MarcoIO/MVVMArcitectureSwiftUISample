@@ -15,14 +15,19 @@ struct MarvelListView: View {
         NavigationStack {
             List {
                 ForEach(vm.characters) { character in
-                    CharacterCell(vm: vm, character: character)
+                    NavigationLink {
+                        MarvelDetailView(vm: MarvelDetailViewModel(idCharacter: character.id ?? -1))
+                    } label: {
+                        CharacterCell(vm: MarvelListCellViewModel(character: character))
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                     .onAppear {
                         Task {
                             await self.listItemAppears(character)
                         }
                     }
                 }
-
             }
             .emptyListPlaceholder(
                 vm.characters,
@@ -36,7 +41,8 @@ struct MarvelListView: View {
                  await vm.getCharactersListMarvel()
             }.overlay {
                 if vm.isFetching {
-                    LoadingSpinner()
+                    ProgressView()
+                    // LoadingSpinner()
                 }
             }
             .alert("Network Error",
