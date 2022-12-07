@@ -18,7 +18,7 @@ struct MarvelDetailView: View {
                     .font(.largeTitle.bold())
                     .padding([.leading, .trailing, .bottom])
                 if let imageName = vm.characterDataSource?.imageName {
-                    AsyncImage(url: URL(string: imageName + "f")) { image in
+                    AsyncImage(url: URL(string: imageName)) { image in
                         image
                             .resizable()
                             .scaledToFill()
