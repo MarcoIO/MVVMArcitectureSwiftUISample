@@ -19,9 +19,18 @@ struct InitialSelectionView: View {
                             .font(.title2)
                         Group {
                             NavigationLink {
-                                MarvelListScrollView()
+                                MarvelListView()
                             } label: {
                                 Text("Marvel List")
+                                    .frame(maxWidth: .infinity)
+                            }
+                            .padding(.horizontal, 30)
+                            .buttonStyle(SelectionButtonStyle())
+                            .frame(width: UIScreen.main.bounds.width)
+                            NavigationLink {
+                                MarvelListScrollView()
+                            } label: {
+                                Text("Marvel List ScrollView")
                                     .frame(maxWidth: .infinity)
                             }
                             .padding(.horizontal, 30)

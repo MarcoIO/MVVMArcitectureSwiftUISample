@@ -40,7 +40,9 @@ struct MarvelListScrollView: View {
             }
             .scrollIndicators(.visible)
             .task {
-                 await vm.getCharactersListMarvel()
+                if vm.characters.isEmpty {
+                    await vm.getCharactersListMarvel()
+                }
             }
             .refreshable {
                  await vm.getCharactersListMarvel()
