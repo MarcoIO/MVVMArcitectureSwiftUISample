@@ -37,7 +37,7 @@ struct InitialSelectionView: View {
                             .buttonStyle(SelectionButtonStyle())
                             .frame(width: UIScreen.main.bounds.width)
                             NavigationLink {
-
+                                RickAndMortyListView()
                             } label: {
                                 Text("Rick and Morty List")
                                     .frame(maxWidth: .infinity)

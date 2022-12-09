@@ -1,30 +1,28 @@
 //
-//  MarvelListViewModel.swift
+//  RickAndMortyListViewModel.swift
 //  MVVMArchitectureSwiftUISample
 //
-//  Created by marco.iniguez.ollero on 30/11/22.
+//  Created by marco.iniguez.ollero on 7/12/22.
 //
 
 
 import Foundation
 
-final class MarvelListViewModel:ObservableObject {
+final class RickAndMortyListViewModel:ObservableObject {
     @Published var isFetching = false
     @Published var isFetchingPagination = false
 
-    @Published var characters: [CharactersList] = []
+    @Published var characters: [ResultRickAndMorty] = []
 
     @Published var showAlert = false
     @Published var errorMsg = ""
 
-    @Published var requestSuccess = false
-    @Published var requestSuccessString = ""
 
-
-    let marvelService = MarvelService()
+    let rickAndMortyService = RickAndMortyService()
 
     @Published var pageList = 0
-    @Published var sortType:SortType = .none
+    @Published var statusType:Status = .all
+    @Published var genderType:Gender = .all
     @Published var search: String = ""
 
 
@@ -35,7 +33,7 @@ final class MarvelListViewModel:ObservableObject {
 
     }
     @MainActor
-    func getCharactersListMarvel() async {
+    func getCharactersListRickAndMorty() async {
         defer {
             isFetching = false
             isFetchingPagination = false
@@ -49,15 +47,12 @@ final class MarvelListViewModel:ObservableObject {
             } else  {
                 isFetchingPagination = true
             }
-
-            let response = try await marvelService.getCharactersListMarvel(page: pageList, sortType: sortType, search: search)
-            if let data = response.data {
+            let response = try await rickAndMortyService.getAllCharactersRickAndMorty(page: pageList, nameFilter: search, gender: genderType == .all ? nil : genderType, status: statusType == .all ? nil : statusType)
+            if let data = response.results {
                 if pageList == 0 {
                     characters.removeAll()
                 }
-                characters += data.results ?? []
-                requestSuccess.toggle()
-                requestSuccessString = "Exito en la llamada"
+                characters += data
             }
         } catch let error as CustomNetworkError {
             errorMsg = error.customMessage
@@ -67,11 +62,11 @@ final class MarvelListViewModel:ObservableObject {
             showAlert.toggle()
         }
     }
-    
+
     @MainActor
     func sortFilterCharacters() async {
         characters.removeAll()
         pageList = 0
-        await getCharactersListMarvel()
+        await getCharactersListRickAndMorty()
     }
 }

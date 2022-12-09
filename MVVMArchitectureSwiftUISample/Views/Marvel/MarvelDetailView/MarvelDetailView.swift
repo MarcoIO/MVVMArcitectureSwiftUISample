@@ -35,7 +35,6 @@ struct MarvelDetailView: View {
                             .foregroundColor(.gray)
 
                     }
-
                 }
                 List {
                     ForEach(vm.characterDataSource?.sections ?? [], id:\.self) { section in

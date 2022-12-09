@@ -74,9 +74,6 @@ struct MarvelListScrollView: View {
                     }
                 }
             }
-//            .navigationDestination(isPresented: $vm.requestSuccess) {
-//                Text(vm.requestSuccessString)
-//            }
         }
 
     }
